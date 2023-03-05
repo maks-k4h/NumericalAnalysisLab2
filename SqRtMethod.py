@@ -119,7 +119,6 @@ def det(A):
     return np.prod(d) * np.prod(S.diagonal()) ** 2
 
 
-
 A = np.array([
     [10, 2, 4],
     [2, 6, 1],
