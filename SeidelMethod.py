@@ -20,7 +20,7 @@ def solve(A, b, x0, epsilon, util=False, max_n=100):
             if i != 0:
                 x_new[i] -= x_new[:i] @ A[i, :i]
 
-            if i != n - 1:
+            if i != N - 1:
                 x_new[i] -= x[i+1:] @ A[i, i+1:]
 
             x_new[i] /= A[i, i]
@@ -35,7 +35,7 @@ def solve(A, b, x0, epsilon, util=False, max_n=100):
                 '\tx_%d = %s' % (n + 1, str(x_new))
             )
 
-        if np.linalg.norm(x - x_new) < epsilon:
+        if np.linalg.norm(x - x_new) <= epsilon:
             break
 
         x = x_new

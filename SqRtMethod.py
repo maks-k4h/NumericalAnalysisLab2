@@ -11,9 +11,7 @@ def factorize_StDS(A, util=False):
 
     n = A.shape[0]
 
-    for i in range(n):
-        for j in range(n):
-            assert A[i,j] == A.T[i, j]
+    assert np.all(A == A.T)
 
     S = np.zeros_like(A)
     d = np.zeros(n)
